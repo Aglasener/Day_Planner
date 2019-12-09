@@ -1,3 +1,12 @@
+var update = function () {
+    $("#datetime").text(moment().format('dddd, MMMM Do YYYY, h:mm:ss a'));
+};
+
+$(document).ready(function(){
+    update();
+    setInterval(update, 1000);
+});
+
 var events = ["","","","","","","","",""];
 var currentId = 0;
 
