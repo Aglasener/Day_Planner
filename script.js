@@ -1,3 +1,5 @@
+
+// Present Time at top of screen
 var update = function () {
     $("#datetime").text(moment().format('dddd, MMMM Do YYYY, h:mm:ss a'));
 };
@@ -7,6 +9,7 @@ $(document).ready(function(){
     setInterval(update, 1000);
 });
 
+// code for contents of the Day Planner
 var events = ["","","","","","","","",""];
 var currentId = 0;
 
@@ -36,7 +39,34 @@ $(".save").on("click", function(){
     localStorage.setItem("plans", JSON.stringify(events));
 });
 
+// code for changing colors of the time slots
+//moment($(".hour").val(), "HH:mm").format("hh:mm A");
 
+
+
+
+var updateTimeColor = function () {
+    milTime = moment().format('HH');
+    console.log(milTime);
+
+for (var i = 0; i < events.length; i ++){
+    var timeId = Number(i) + 9;
+    if(timeId<milTime){
+        $("#"+i+"").attr("class","past");
+    }
+    else if (timeId==milTime){
+        $("#"+i+"").attr("class","present");
+    }
+    else{
+        $("#"+i+"").attr("class","future");
+    }
+}
+};
+
+$(document).ready(function(){
+    updateTimeColor();
+    setInterval(update, 60000);
+});
 
 
 
