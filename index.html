@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Day Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+  <div id = "container">
+      <div class = "page-header text-center">
+        <h2>Day Planner</h2>  
+        <h4 id = "Today"></h3>
+      </div>
+
+      <table id="calender" class = "table table-striped table-bordered w-auto">
+              
+        <thead class = "thead-dark">
+          <tr>
+            <th scope = "col">Time</th>
+            <th scope = "col">Event</th>
+            <th scope = "col"></th>
+          </tr> 
+        </thead>
+
+        <tbody>
+            <tr id = "0">
+                <td class = "hour align-middle" value = "9">9:00 AM</td>
+                <td class = "event"><textarea id="plan1" rows = "2" cols = "189"></textarea></td>
+                <td class = "buttons align-middle"><button class = "save">Save</button></td>
+            </tr>
+            <tr id = "1">
+              <td class = "hour align-middle" value = "10">10:00 AM</td>
+              <td class = "event"><textarea id="plan2" rows = "2" cols = "189"></textarea></td>
+              <td class = "buttons align-middle"><button class = "save">Save</button></td>
+          </tr>
+        </tbody>
+        
+      </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script type="text/javascript">
+    
+   var nowMoment = moment();
+   $("#Today").text(nowMoment);
+
+
+
+
+
+   /*moment($(".hour").val(), "HH:mm").format("hh:mm A");
+  
+    
+
+    
+
+    
+
+    $(".table").append('<tr id = "i"><td class = "time">' + convert + '</td><td class = "event"> ' + '</td><td class = "save">'
+    + "save/edit" + '</td></tr>');
+   }
+   */
+  
+
+  </script>
+
+  
+</body>
+
+</html>
